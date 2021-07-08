@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
+    <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 상용버전, 속도와 용량이 최적화됨. -->
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+
+    <script defer src="main.js"></script>
+</head>
+
+<body>
+    <div class="nav-bar"></div>
+
+    <div id="app">
+        
+        <div class="product">     
+            <div class="product-image">
+                <img v-bind:src="image" v-bind:alt="altText">
+            </div>
+
+            <div class="product-pro">
+                <h1>I love {{ product }}</h1>
+                <p v-if="inventory > 10">In Stock</p>
+                <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
+                <p v-else>Out of Stock</p>
+            </div>
+        </div>
+        
+        <!-- Expression -->
+        <!-- {{ product + '?' }} -->
+        <!-- {{ firstName + ' ' + lastName }} -->
+        <!-- {{ clicked ? true : false }} -->
+        <!-- {{ message.split('').reverse().join('') }} -->
+    </div>
+</body>
+</html>
